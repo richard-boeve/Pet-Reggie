@@ -1,10 +1,10 @@
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('pets', (table) => {
         table.increments('id').primary()
-        table.string('pet_type')
-        table.string('owner_id')
+        table.integer('pet_type')
+        table.integer('owner_id')
         table.string('name')
-        table.string('date_of_birth')
+        table.date('date_of_birth')
     })  
 };
 
