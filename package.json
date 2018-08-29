@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index",
+    "start": "node index & webpack --watch",
     "knex": "knex"
   },
   "repository": {
@@ -20,11 +20,19 @@
   },
   "homepage": "https://github.com/richard-boeve/Pet-Reggie#readme",
   "devDependencies": {
-    "nodemon": "^1.18.3"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.18.3",
+    "webpack": "^3",
+    "webpack-dev-server": "^3.1.3"
   },
   "dependencies": {
     "express": "^4.16.3",
     "knex": "^0.15.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "sqlite3": "^4.0.2"
   }
 }
