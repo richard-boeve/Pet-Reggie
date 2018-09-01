@@ -23742,18 +23742,31 @@ const Footer = () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement
 class Register extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            firstName: '',
+            lastName: '',
+            street: '',
+            suburb: '',
+            city: '',
+            postcode: '',
+            country: '',
+            phone1: '',
+            phone2: '',
+            phone3: '',
+            email1: '',
+            email2: '',
+            email3: ''
+        };
 
         this.onSubmit = this.onSubmit.bind(this);
         this.updateDetails = this.updateDetails.bind(this);
     }
 
     updateDetails(e) {
-        console.log(e.target);
-        console.log(e.target.name, e.target.value);
-        this.setState({
-            name: e.target.value
-        });
+        const key = e.target.name;
+        const value = e.target.value;
+        const obj = { [key]: value };
+        this.setState(obj);
     }
 
     onSubmit(e) {
@@ -23763,14 +23776,102 @@ class Register extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
     render() {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "form",
+            'form',
             { onSubmit: this.onSubmit },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { onChange: this.updateDetails, type: "text", name: "First Name", placeholder: "First Name" }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", name: "Last Name", placeholder: "Last Name" }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "submit" })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'First Name: ',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'firstName', placeholder: 'First Name' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Last Name: ',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'lastName', placeholder: 'Last Name' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Street:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'street', placeholder: 'Street' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Suburb:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'suburb', placeholder: 'Suburb' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'City:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'city', placeholder: 'City' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Postcode:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'postcode', placeholder: 'Postcode' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Country:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'country', placeholder: 'Country' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Phone 1:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'phone1', placeholder: 'Phone 1' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Phone 2:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'phone2', placeholder: 'Phone 2' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Phone 3:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'phone3', placeholder: 'Phone 3' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Email 1:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'email1', placeholder: 'Email 1' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Email 2:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'email2', placeholder: 'Email 2' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Email 3:',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'email3', placeholder: 'Email 3' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit' })
         );
     }
-
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Register;
 
