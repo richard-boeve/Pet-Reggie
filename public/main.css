@@ -4,7 +4,7 @@
 
 .nav {
     background-color: rgb(187, 183, 183);
-    padding: 20px 5px;
+    padding: 20px;
 }
 
 .title {
@@ -15,6 +15,7 @@
 .navmenu {
     column-count: 4;
     text-align: center;
+    vertical-align: middle;
 }
 
 .navoptions {

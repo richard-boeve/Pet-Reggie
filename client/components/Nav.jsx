@@ -7,7 +7,7 @@ const Nav = () => {
         <h2>Pet Reggie</h2>
         <div className = 'navmenu'>    
             <h3><Link to="/" className={'navoptions'}>Home</Link></h3>
-            <h3>Register</h3>
+            <h3><Link to="/register" className={'navoptions'}>Register</Link></h3>
             <h3>Update</h3>
             <h3>Remove</h3>
         </div>

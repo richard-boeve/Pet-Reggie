@@ -21081,7 +21081,7 @@ module.exports = camelize;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Nav__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LandingPage__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Footer__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__NewPet__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Register__ = __webpack_require__(73);
 
 
 
@@ -21106,7 +21106,7 @@ const App = () => {
                 'div',
                 { className: 'page' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__LandingPage__["a" /* default */] }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/new', component: __WEBPACK_IMPORTED_MODULE_5__NewPet__["a" /* default */] })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_5__Register__["a" /* default */] })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
@@ -23667,7 +23667,11 @@ const Nav = () => {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h3',
                 null,
-                'Register'
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                    { to: '/register', className: 'navoptions' },
+                    'Register'
+                )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h3',
@@ -23735,17 +23739,41 @@ const Footer = () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-const NewPet = () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    'div',
-    null,
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h1',
-        null,
-        'NewPet'
-    )
-);
+class Register extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
 
-/* harmony default export */ __webpack_exports__["a"] = (NewPet);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.updateDetails = this.updateDetails.bind(this);
+    }
+
+    updateDetails(e) {
+        console.log(e.target);
+        console.log(e.target.name, e.target.value);
+        this.setState({
+            name: e.target.value
+        });
+    }
+
+    onSubmit(e) {
+        e.preventDefault();
+        console.log(this.state);
+    }
+
+    render() {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "form",
+            { onSubmit: this.onSubmit },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { onChange: this.updateDetails, type: "text", name: "First Name", placeholder: "First Name" }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", name: "Last Name", placeholder: "Last Name" }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "submit" })
+        );
+    }
+
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Register;
+
 
 /***/ })
 /******/ ]);

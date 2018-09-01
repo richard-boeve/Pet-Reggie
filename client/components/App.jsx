@@ -4,7 +4,7 @@ import {HashRouter as Router, Route} from'react-router-dom'
 import Nav from './Nav'
 import LandingPage from './LandingPage'
 import Footer from './Footer'
-import NewPet from './NewPet'
+import Register from './Register'
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
             </div>
             <div className = 'page'>
                 <Route exact path='/' component={LandingPage} />
-                <Route path='/new' component={NewPet} />
+                <Route path='/register' component={Register} />
             
             
             </div>
