@@ -4,9 +4,9 @@ const connection = require('knex')(config)
 
 
 
-function getOwners (testConn) {
+function getOwners (id, testConn) {
     const conn = testConn || connection
-    return conn ('owners')
+    return conn('owners')
     .select()
 }
 

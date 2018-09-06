@@ -23750,7 +23750,6 @@ const Footer = () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__api__);
 
 
 
@@ -23909,11 +23908,21 @@ class Register extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
 /***/ }),
 /* 74 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// import request from 'superagent'
+"use strict";
+/* unused harmony export getOwners */
+throw new Error("Cannot find module \"superagent\"");
 
-// const registerUrl = 'http://localhost:3000/#/register'
+
+function getOwners() {
+    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/v1/owners').then(res => {
+        const owners = res.body;
+        return owners;
+    }).catch(() => {
+        throw Error('You need to implement an API route for /api/v1/owners');
+    });
+}
 
 // export function register (register, callback) {
 //     request
