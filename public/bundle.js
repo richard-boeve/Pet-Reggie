@@ -21082,6 +21082,8 @@ module.exports = camelize;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LandingPage__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Footer__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Register__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ListOfOwners__ = __webpack_require__(75);
+
 
 
 
@@ -21106,7 +21108,8 @@ const App = () => {
                 'div',
                 { className: 'page' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__LandingPage__["a" /* default */] }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_5__Register__["a" /* default */] })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_5__Register__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/owners', component: __WEBPACK_IMPORTED_MODULE_6__ListOfOwners__["a" /* default */] })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
@@ -23676,6 +23679,15 @@ const Nav = () => {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h3',
                 null,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                    { to: '/owners', className: 'navoptions' },
+                    'Owners'
+                )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'h3',
+                null,
                 'Update'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -23737,6 +23749,9 @@ const Footer = () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__api__);
+
 
 
 class Register extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
@@ -23760,6 +23775,8 @@ class Register extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
         this.onSubmit = this.onSubmit.bind(this);
         this.updateDetails = this.updateDetails.bind(this);
+        this.refreshForm = this.refreshForm.bind(this);
+        this.registerOwner = this.registerOwner.bind(this);
     }
 
     updateDetails(e) {
@@ -23772,6 +23789,15 @@ class Register extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     onSubmit(e) {
         e.preventDefault();
         console.log(this.state);
+    }
+
+    registerOwner(e) {
+        register(this.state, this.props.finishRegister);
+    }
+
+    refreshForm() {
+        this.setState({});
+        this.render();
     }
 
     render() {
@@ -23869,12 +23895,54 @@ class Register extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.updateDetails, type: 'text', name: 'email3', placeholder: 'Email 3' })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit' })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                { onClick: this.refreshForm },
+                'Refresh'
+            )
         );
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Register;
 
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+// import request from 'superagent'
+
+// const registerUrl = 'http://localhost:3000/#/register'
+
+// export function register (register, callback) {
+//     request
+//     .send(register)
+//     .end((err, res) => {
+//         callback(err)
+//     })    
+// }
+
+/***/ }),
+/* 75 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+const ListOfOwners = () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h4',
+        null,
+        'List of Owners'
+    )
+);
+
+/* harmony default export */ __webpack_exports__["a"] = (ListOfOwners);
 
 /***/ })
 /******/ ]);

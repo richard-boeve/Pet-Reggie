@@ -1,4 +1,5 @@
 import React from 'react'
+import { registerOwner } from '../api';
 
 export default class Register extends React.Component {
     constructor(props) {
@@ -20,7 +21,9 @@ export default class Register extends React.Component {
         }
 
     this.onSubmit = this.onSubmit.bind(this) 
-    this.updateDetails = this.updateDetails.bind(this)   
+    this.updateDetails = this.updateDetails.bind(this)  
+    this.refreshForm = this.refreshForm.bind(this)
+    this.registerOwner = this.registerOwner.bind(this) 
     }
 
     updateDetails(e) {
@@ -33,6 +36,16 @@ export default class Register extends React.Component {
     onSubmit(e) {
         e.preventDefault()
         console.log(this.state)
+    }
+
+    registerOwner(e){
+        register(this.state, this.props.finishRegister)
+    }
+
+    refreshForm(){
+        this.setState({
+        })
+        this.render()
     }
 
     render () {
@@ -52,6 +65,7 @@ export default class Register extends React.Component {
                 <label>Email 2:<input onChange={this.updateDetails} type="text" name="email2" placeholder="Email 2" /></label><br />
                 <label>Email 3:<input onChange={this.updateDetails} type="text" name="email3" placeholder="Email 3" /></label><br />
                 <input type="submit" />
+                <button onClick={this.refreshForm}>Refresh</button>
             </form>
         )
     }
