@@ -9,7 +9,7 @@ function getOwners (id, testConn) {
     return conn('owners')
     .select()
 }
-
+g
 function saveOwner(owner, testConn) {
     const conn = testConn || connection
     
