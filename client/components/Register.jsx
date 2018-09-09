@@ -1,5 +1,5 @@
 import React from 'react'
-import { registerOwner } from '../api';
+import {registerOwner} from '../api.js'
 
 export default class Register extends React.Component {
     constructor(props) {
@@ -23,8 +23,7 @@ export default class Register extends React.Component {
     this.onSubmit = this.onSubmit.bind(this) 
     this.updateDetails = this.updateDetails.bind(this)  
     this.refreshForm = this.refreshForm.bind(this)
-    this.registerOwner = this.registerOwner.bind(this) 
-    }
+        }
 
     updateDetails(e) {
         const key = e.target.name
@@ -35,11 +34,9 @@ export default class Register extends React.Component {
 
     onSubmit(e) {
         e.preventDefault()
-        console.log(this.state)
-    }
-
-    registerOwner(e){
-        register(this.state, this.props.finishRegister)
+        registerOwner(this.state) 
+        this.props.history.push('/');
+        //console.log(this.state)       
     }
 
     refreshForm(){

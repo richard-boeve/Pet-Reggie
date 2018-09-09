@@ -5,15 +5,21 @@ const db = require('./db')
 
 
 router.get('/owners', function(req, res){
-    db.getOwners(req.params)
+    db.getOwners(req.body)
     .then(owners => {
         res.json(owners)
     })
 })
 
-module.exports = router
+router.post('/register', (req, res) => {
+    db.saveOwner(req.body)
+    console.log(req.body)
+    .then(ids => {
+        res.sendStatus(200)
+    })
+    .catch(err => {
+        res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
 
-// router.get('/owners', function(req, res){
-//     const owners = db.getOwners()
-//     res.json(owners)
-// })
+module.exports = router

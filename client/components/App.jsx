@@ -7,24 +7,28 @@ import Footer from './Footer'
 import Register from './Register'
 import ListOfOwners from './ListOfOwners'
 
-const App = () => {
-  return (
-    <Router>
-        <div className = 'app'>
-            <div className = 'nav'>
-                <Route path='/' component={Nav} />            
-            </div>
-            <div className = 'page'>
-                <Route exact path='/' component={LandingPage} />
-                <Route path='/register' component={Register} />
-                <Route path='/owners' component={ListOfOwners} />
-            </div>
-            <div className = 'footer'>
-                <Route path='/' component={Footer} />  
-            </div>
-        </div>
-    </Router>
-  )
-}
+
+class App extends React.Component {
+
+    render () {
+        return (
+            <Router>
+                <div className = 'app'>
+                    <div className = 'nav'>
+                        <Route path='/' component={Nav} />            
+                    </div>
+                    <div className = 'page'>
+                        <Route exact path='/' component={LandingPage} />
+                        <Route path='/register' component={Register} />
+                        <Route path='/owners' component={ListOfOwners} />
+                    </div>
+                    <div className = 'footer'>
+                        <Route path='/' component={Footer} />  
+                    </div>
+                </div>
+            </Router>
+                )
+            }
+}    
 
 export default App

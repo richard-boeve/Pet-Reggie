@@ -1,11 +1,11 @@
 {
   "name": "Pet-Reggie",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pet Reggie is a new way of registering your pet. It allows you to control the registration of your own pet by its microchip and also to keep an up to date record of its vaccinations. This data is deployed to the Blockchain and is part of an international ledger. Advantages are that you aren't relying on a vet to do this, you are in control of updates of your and your pets details.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index & webpack --watch",
+    "start": "nodemon index & webpack --watch",
     "knex": "knex"
   },
   "repository": {

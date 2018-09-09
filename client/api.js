@@ -1,7 +1,8 @@
 import request from 'superagent'
 
 export function getOwners() {
-    return request.get('/api/v1/owners')
+    request
+    .get('/api/v1/owners')
     .then (res => {
         const owners = res.body
         return owners
@@ -11,15 +12,12 @@ export function getOwners() {
     })  
 }
 
-
-
-
-
-
-// export function register (register, callback) {
-//     request
-//     .send(register)
-//     .end((err, res) => {
-//         callback(err)
-//     })    
-// }
+export function registerOwner (owner, callback) {
+    console.log(owner)
+    request
+    .post('api/v1/owners')
+    .send(owner)
+    .end((err, res) => {
+        callback(err,res)
+    })    
+}
