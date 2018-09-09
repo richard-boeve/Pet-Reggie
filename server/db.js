@@ -9,11 +9,11 @@ function getOwners (id, testConn) {
     return conn('owners')
     .select()
 }
-g
+
 function saveOwner(owner, testConn) {
     const conn = testConn || connection
     
-    let owner =  {
+    const owner =  {
             firstName: first_name,
             lastName: last_name,
             street: street,

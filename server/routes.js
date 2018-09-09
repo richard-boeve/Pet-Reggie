@@ -17,6 +17,9 @@ router.post('/register', (req, res) => {
     .then(ids => {
         res.sendStatus(200)
     })
+    // .then(savedOwner => {
+    //     res.json(savedOwner)
+    // })
     .catch(err => {
         res.status(500).send('DATABASE ERROR: ' + err.message)
     })
