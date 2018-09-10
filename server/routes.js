@@ -12,14 +12,13 @@ router.get('/owners', function(req, res){
 })
 
 router.post('/register', (req, res) => {
-    db.saveOwner(req.body)
-    console.log(req.body)
-    .then(ids => {
-        res.sendStatus(200)
+    let data = req.body
+    console.log(data)
+    db.saveOwner(data)
+    .then(owners => {
+        res.json(owners)
+        // res.sendStatus(200)
     })
-    // .then(savedOwner => {
-    //     res.json(savedOwner)
-    // })
     .catch(err => {
         res.status(500).send('DATABASE ERROR: ' + err.message)
     })
