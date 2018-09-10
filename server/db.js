@@ -11,24 +11,7 @@ function getOwners (id, testConn) {
 }
 
 function saveOwner(owner, testConn) {
-    const conn = testConn || connection
-    
-    const owner =  {
-            firstName: first_name,
-            lastName: last_name,
-            street: street,
-            suburb: suburb,
-            city: city,
-            postcode: postcode,
-            country: country,
-            phone1: phone1,
-            phone2: phone2,
-            phone3: phone3,
-            email1: email1,
-            email2: email2,
-            email3: email3,
-    }
-           
+    const conn = testConn || connection           
     return conn ('owners')
         .insert(owner)
 }
