@@ -5,8 +5,8 @@ export default class Register extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstName: '',
-            lastName: '',
+            first_name: '',
+            last_name: '',
             street: '',
             suburb: '',
             city: '',
@@ -23,6 +23,7 @@ export default class Register extends React.Component {
     this.onSubmit = this.onSubmit.bind(this) 
     this.updateDetails = this.updateDetails.bind(this)  
     this.refreshForm = this.refreshForm.bind(this)
+    
         }
 
     updateDetails(e) {
@@ -45,11 +46,13 @@ export default class Register extends React.Component {
         this.render()
     }
 
+
+
     render () {
         return (
             <form onSubmit={this.onSubmit}>
-                <label>First Name: <input onChange={this.updateDetails} type="text" name="firstName" placeholder="First Name" /></label><br /> 
-                <label>Last Name: <input onChange={this.updateDetails} type="text" name="lastName" placeholder="Last Name" /></label><br /> 
+                <label>First Name: <input onChange={this.updateDetails} type="text" name="first_name" placeholder="First Name" /></label><br /> 
+                <label>Last Name: <input onChange={this.updateDetails} type="text" name="last_name" placeholder="Last Name" /></label><br /> 
                 <label>Street:<input onChange={this.updateDetails} type="text" name="street" placeholder="Street" /></label><br />
                 <label>Suburb:<input onChange={this.updateDetails} type="text" name="suburb" placeholder="Suburb" /></label><br />
                 <label>City:<input onChange={this.updateDetails} type="text" name="city" placeholder="City" /></label><br />

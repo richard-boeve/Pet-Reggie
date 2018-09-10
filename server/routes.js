@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 const db = require('./db')
 
 
@@ -11,16 +10,11 @@ router.get('/owners', function(req, res){
     })
 })
 
-router.post('/register', (req, res) => {
+router.post('/register', (req) => {
     let data = req.body
-    console.log(data)
     db.saveOwner(data)
     .then(owners => {
         res.json(owners)
-        // res.sendStatus(200)
-    })
-    .catch(err => {
-        res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
 

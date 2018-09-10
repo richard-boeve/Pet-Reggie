@@ -15,7 +15,7 @@ export function getOwners() {
 export function registerOwner (owner, callback) {
     console.log(owner)
     request
-    .post('api/v1/owners')
+    .post('api/v1/register')
     .send(owner)
     .end((err, res) => {
         callback(err,res)
