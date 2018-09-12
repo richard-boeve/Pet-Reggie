@@ -1,7 +1,7 @@
 import request from 'superagent'
 
 export function getOwners() {
-    request
+    return request
     .get('/api/v1/owners')
     .then (res => {
         const owners = res.body

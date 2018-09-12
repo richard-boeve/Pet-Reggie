@@ -1194,7 +1194,7 @@ var matchPath = function matchPath(pathname) {
 
 
 function getOwners() {
-    __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/v1/owners').then(res => {
+    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/v1/owners').then(res => {
         const owners = res.body;
         return owners;
     }).catch(() => {
@@ -28094,7 +28094,7 @@ class ListOfOwners extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
     }
 
     fetchOwners() {
-        return Object(__WEBPACK_IMPORTED_MODULE_1__api_js__["a" /* getOwners */])().then(owners => {
+        Object(__WEBPACK_IMPORTED_MODULE_1__api_js__["a" /* getOwners */])().then(owners => {
             this.setState({ owners: owners });
         }).catch(err => {
             this.setState({ errorMessage: err.message });
@@ -28102,12 +28102,14 @@ class ListOfOwners extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
     }
 
     render() {
+        console.log('render', this.state.owners.length);
+        console.log();
+
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             null,
-            this.state.owners.map(owner => {
-                return;
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            this.state.owners.length > 0 && this.state.owners.map(owner => {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     null,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

@@ -17,7 +17,7 @@ export default class ListOfOwners extends React.Component {
     }
 
     fetchOwners () {
-        return getOwners()
+        getOwners()
         .then(owners => {
             this.setState({owners: owners})
         })
@@ -27,26 +27,32 @@ export default class ListOfOwners extends React.Component {
     }
 
     render() {
+        console.log('render', this.state.owners.length)
+        console.log()
+        
       return (
         <div>
-          {this.state.owners.map((owner) => {
-            return
-            <div>
-                <p>{owner.first_name}</p>
-                <p>{owner.last_name}</p>
-                <p>{owner.street}</p>
-                <p>{owner.suburb}</p>
-                <p>{owner.city}</p>
-                <p>{owner.postcode}</p>
-                <p>{owner.country}</p>
-                <p>{owner.phone1}</p>
-                <p>{owner.phone2}</p>
-                <p>{owner.phone3}</p>
-                <p>{owner.email1}</p>
-                <p>{owner.email2}</p>
-                <p>{owner.email3}</p>
-            </div>    
-        })}
+            {
+                this.state.owners.length > 0 &&this.state.owners.map((owner) => {
+                    return (
+                    <div>
+                        <p>{owner.first_name}</p>
+                        <p>{owner.last_name}</p>
+                        <p>{owner.street}</p>
+                        <p>{owner.suburb}</p>
+                        <p>{owner.city}</p>
+                        <p>{owner.postcode}</p>
+                        <p>{owner.country}</p>
+                        <p>{owner.phone1}</p>
+                        <p>{owner.phone2}</p>
+                        <p>{owner.phone3}</p>
+                        <p>{owner.email1}</p>
+                        <p>{owner.email2}</p>
+                        <p>{owner.email3}</p>
+                    </div>
+                    )    
+        })
+        }
         </div>
     )}
 }
