@@ -5,6 +5,8 @@ import LandingPage from './LandingPage'
 import Footer from './Footer'
 import Register from './Register'
 import ListOfOwners from './ListOfOwners'
+import Update from './Update'
+import Remove from './Remove'
 import {getOwners as owners} from '../api.js'
 
 export default class App extends React.Component {
@@ -22,6 +24,8 @@ export default class App extends React.Component {
                         <Route exact path='/' component={LandingPage} />
                         <Route path='/register' component={Register} />
                         <Route path='/owners' component={ListOfOwners} />
+                        <Route path='/update' component={Update} />
+                        <Route path='/remove' component={Remove} />
                     </div>
                     <div className = 'footer'>
                         <Route path='/' component={Footer} />  
