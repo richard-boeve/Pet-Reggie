@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const db = require('./db')
+const token = require('./auth/token')
 
 
-router.get('/owners', function(req, res){
+router.get('/owners', token.decode, function(req, res){
     db.getOwners(req.body)
     .then(owners => {
         res.json(owners)
